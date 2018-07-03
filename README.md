@@ -28,9 +28,9 @@ git clone https://github.com/Paperspace/GradientDeepFakes.git
 cd GradientDeepFakes
 ```
 
-There are two scripts in this repository that you can try. Both will take Trump images and attempt to convert them to the face style of Nicolas Cage.
+There are two scripts in this repository that you can try. Both will take Trump images and attempt to convert them to the face style of Nicolas Cage using Paperspace GPU support.
 
-## To convert single image with Paperspace GPU support:
+## Convert one image:
 
 ```bash
 paperspace jobs create --container paperspacepublic/deepfakes-gpu --machineType P5000 --command 'bash single.sh' --project 'Single Image Conversion'
@@ -38,7 +38,7 @@ paperspace jobs create --container paperspacepublic/deepfakes-gpu --machineType 
 
 This means we want to create a new `paperspace job` using as a base `container` a Docker image that comes with all the deepfakes dependencies installed. We also want to use a `machineType P5000` and we want to run the command `bash single.sh` to start the convert process. This project will be called `Single Image Conversion`
 
-## To convert 376 image (inside the `/images` folder) with Paperspace GPU support:
+## Convert 376 images (all images inside the `/images` folder):
 
 ```bash
 paperspace jobs create --container paperspacepublic/deepfakes-gpu --machineType P5000 --command 'bash multiple.sh' --project 'Mulitple Image Conversion'
